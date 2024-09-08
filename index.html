@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timber Frame Co.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+html {
+      scroll-behavior: smooth;
+    }
+
+        
+        body {
+            font-family: 'Bodoni Moda', serif;
+        }
+
+        .dot-square {
+            z-index: -1;
+            width: 500px;
+            height: 250px;
+            background-image: radial-gradient(circle, black 1px, transparent 1px),
+                radial-gradient(circle, black 1px, transparent 1px),
+                radial-gradient(circle, black 1px, transparent 1px),
+                radial-gradient(circle, black 1px, transparent 1px),
+                radial-gradient(circle, black 1px, transparent 1px),
+                radial-gradient(circle, black 1px, transparent 1px);
+            background-size: 10px 10px, 10px 10px, 10px 10px;
+            background-position: 0px 0px, 10px 10px, 5px 5px;
+        }
+
+        /* Animation for fade-in effect */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Button hover effect */
+        a.btn {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        a.btn:hover {
+            background-color: #c4c5ba;
+            transform: translateY(-5px);
+        }
+
+        /* Smooth image hover effect */
+        img {
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+    <script>
+        // Smooth transition for fade-in elements when they scroll into view
+        document.addEventListener('DOMContentLoaded', function () {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            });
+
+            fadeElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</head>
+
+<body class="bg-white text-black">
+
+    <!-- Navbar -->
+    <nav class="bg-white">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <div class="flex-1 flex justify-center lg:justify-start">
+                <span id="title" class="text-center self-center text-3xl font-semibold whitespace-nowrap">Wuuden homes</span>
+            </div>
+            <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
+                <ul
+                    class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0">
+                    <li><a href="#about" class="block py-2 px-3 text-black rounded lg:border-0 lg:p-0 hover:text-gray-600 transition duration-300">About</a></li>
+                    <li><a href="#services" class="block py-2 px-3 text-black rounded lg:border-0 lg:p-0 hover:text-gray-600 transition duration-300">Services</a></li>
+                    <li><a href="#contact" class="block py-2 px-3 text-black rounded lg:border-0 lg:p-0 hover:text-gray-600 transition duration-300">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="top-frame" class="h-screen flex flex-col sm:mt-8 lg:mt-0 lg:flex-row lg:px-28 items-center justify-between text-left">
+        <div class="px-6 lg:w-1/2 lg:text-left text-center fade-in">
+            <h2 class="text-5xl font-bold text-black mb-4">Crafting Timeless Timber Frames</h2>
+            <p class="text-lg text-black max-w-lg mb-6 mx-auto lg:mx-0">Handcrafted excellence meets modern design. We build structures that stand the test of time.</p>
+            <a href="#services" class="bg-white text-black py-2 px-6 rounded-lg shadow-lg hover:bg-[#E4E4DE] transition duration-300">Explore Our Work</a>
+        </div>
+        <div class="px-6 lg:w-1/2 relative mt-8 lg:mt-0 text-center fade-in">
+            <div class="dot-square absolute bottom-56 left-44 hidden xl:block"></div>
+            <div class="dot-square absolute top-56 right-44 hidden xl:block"></div>
+            <img src="/Users/dominicbishop/Desktop/brad/images/interior-frames.jpeg" alt="Hero Image" class="rounded-lg shadow-lg w-full object-cover">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6 fade-in">
+            <h3 class="text-4xl font-semibold text-center mb-12">About Wuuden homes</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <img src="/Users/dominicbishop/Desktop/brad/images/House.jpeg" alt="About Timber Frame" class="rounded-lg shadow-lg w-full object-cover">
+                <div>
+                    <p class="text-lg mb-6">Located in Kent, our company is dedicated to designing and building high-quality, affordable timber frame homes. With our team of in-house architects and structural engineers, we bring innovative designs and structural integrity together to create homes that are sustainable, energy-efficient, and built to last.</p>
+                    <p class="text-lg mb-6">We believe that everyone deserves a beautiful, well-crafted home without breaking the bank. That’s why we specialize in timber frame construction, known for its durability, environmental benefits, and cost-effectiveness. From concept to completion, our team works closely with clients to ensure each project is tailored to meet their unique needs and vision.</p>
+                    <p class="text-lg "> Whether you're building your first home or looking to develop a custom project, we're here to make the process smooth, efficient, and affordable. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Section -->
+    <section>
+        <div class="w-full h-72 overflow-hidden">
+            <img src="/Users/dominicbishop/Desktop/brad/images/logs.webp" alt="About Timber Frame" class="w-full object-cover fade-in">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-semibold text-center mb-12 fade-in">Our Services</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-lg transition duration-300 fade-in">
+                    <img src="/Users/dominicbishop/Desktop/brad/images/timber-interior.jpeg" alt="Service 1" class="mb-4 rounded-lg w-full object-cover">
+                    <h4 class="text-2xl font-semibold mb-4">Timber Frame Construction</h4>
+                    <p>We create timber frame structures that blend tradition and innovation for both residential and commercial spaces.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-lg transition duration-300 fade-in">
+                    <img src="/Users/dominicbishop/Desktop/brad/images/timber-house.jpeg" alt="Service 2" class="mb-4 rounded-lg w-full object-cover">
+                    <h4 class="text-2xl font-semibold mb-4">Custom Design</h4>
+                    <p>Our team works closely with you to design custom timber frame projects that reflect your unique vision.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-lg transition duration-300 fade-in">
+                    <img src="/Users/dominicbishop/Desktop/brad/images/timberh-house-2.jpeg" alt="Service 3" class="mb-4 rounded-lg w-full object-cover">
+                    <h4 class="text-2xl font-semibold mb-4">Restoration & Repair</h4>
+                    <p>We bring old timber frames back to life with expert restoration and repair services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center fade-in">
+            <h3 class="text-4xl font-semibold mb-6">Get in Touch</h3>
+            <p class="max-w-lg mx-auto mb-6">Contact us today to discuss your timber frame project or request a quote.</p>
+            <p class="font-black mt-4">Phone Numbers</p>
+            <p>Brad Harman: 07585224886</p>
+            <p>Jim Calnan: 07841427405</p>
+            <p class="font-black mt-4">Email</p>
+            <p>Brad Harman: bharmancarpentry@outlook.com</p>            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm">&copy; 2024 Wuuden homes LTD. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
