@@ -69,6 +69,13 @@ html {
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
+
+        img.logo {
+            transition: none;
+            transform: none;
+            box-shadow: none;
+        }
+
     </style>
 
     <script>
@@ -92,10 +99,10 @@ html {
 <body class="bg-white text-black">
 
     <!-- Navbar -->
-    <nav class="bg-white">
+    <nav class="bg-white md:mb-12">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <div class="flex-1 flex justify-center lg:justify-start">
-                <img class="w-12 mr-8" src="images/brad-logo.webp"/>
+            <div class=" flex-1 flex justify-center lg:justify-start">
+                <img class="w-12 mr-8 logo" src="images/brad-logo.webp"/>
                 <span id="title" class="text-center self-center text-3xl font-semibold whitespace-nowrap">Wuuden homes</span>
             </div>
             <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
@@ -111,7 +118,7 @@ html {
 
     <!-- Hero Section -->
     <section id="top-frame" class="h-screen flex flex-col sm:mt-8 lg:mt-0 lg:flex-row lg:px-28 items-center justify-between text-left">
-        <div class="px-6 lg:w-1/2 lg:text-left text-center fade-in">
+        <div class="m-auto px-6 lg:w-1/2 lg:text-left text-center fade-in">
             <h2 class="text-5xl font-bold text-black mb-4">Crafting Timeless Timber Frames</h2>
             <p class="text-lg text-black max-w-lg mb-6 mx-auto lg:mx-0">Handcrafted excellence meets modern design. We build structures that stand the test of time.</p>
             <a href="#services" class="bg-white text-black py-2 px-6 rounded-lg shadow-lg hover:bg-[#E4E4DE] transition duration-300">Explore Our Work</a>
